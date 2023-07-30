@@ -37,5 +37,7 @@ app.get('/turing', function(req, res){
     res.sendFile(path.join(__dirname, '/views/turing.html'));
 });
 
-app.use(express.static('public')); // si la carpeta public tendria q ir por fuera de src, como iria esto?
+const publicPath = path.resolve(__dirname, '../public');
+
+app.use(express.static(publicPath)); // si la carpeta public tendria q ir por fuera de src, como iria esto? // Solucionado!
 
